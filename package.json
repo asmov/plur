@@ -1,0 +1,53 @@
+{
+  "name": "@plur/plur",
+  "version": "0.0.2",
+  "type": "module",
+  "description": "An application framework and nodal network platform.",
+  "main": "",
+  "scripts": {
+    "setup-system": "sudo ./bin/setup/sdk-setup-system.bash",
+    "setup-repository": "./bin/setup/sdk-setup-repository.bash",
+    "compile": "./bin/compile.bash",
+    "test": "./bin/test.js",
+    "doc": "jsdoc -c cfg/jsdoc/jsdoc.json ; exit 0",
+    "build": "echo not yet",
+    "release": "echo not yet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/asimovian/plur.git"
+  },
+  "keywords": [
+    "plur",
+    "asimovian",
+    "network",
+    "framework",
+    "platform",
+    "service",
+    "application",
+    "daemon",
+    "app",
+    "p2p",
+    "crypto"
+  ],
+  "author": "roylaurie <roy.laurie@asimovian.software>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asimovian/plur/issues"
+  },
+  "engines": {
+    "node": ">=12.10.0"
+  },
+  "dependencies": {
+    "file-regex": "^3.1.0",
+    "gulp": "^4.0.2",
+    "jsdoc": "^3.6.3",
+    "node-json-rpc": "0.0.1",
+    "rimraf": "^3.0.0",
+    "web3": "~1.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}

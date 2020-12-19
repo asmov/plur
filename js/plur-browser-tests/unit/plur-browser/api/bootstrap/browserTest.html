@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+ @copyright 2019 Asmov LLC
+ @license MIT https://github.com/asmov/plur-www/blob/master/LICENSE.txt
+ @tests plur-browser/api/bootstrap/browser.js
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p l u r  /  t e s t  /  b r o w s e r</title>
+    <!--                     (-(-_-(-_(-_(-_-)_-)-_-)_-)_-)-)                       -->
+    <script type="module" src="../../../../../plur-browser/api/bootstrap/browser.js"></script>
+    <script type="module">
+        import PlurObject from '../../../../../plur/PortableObject.mjs';
+        import TestApp from '../../../../../plur/test/runner/App.mjs';
+        import BrowserTerminal from '../../../../../plur/terminal/Browser.mjs';
+        import {singleton as SystemLog } from '../../../../../plur/log/System.mjs';
+
+        SystemLog.get().emitter().on('info', function(event) {
+            document.getElementById('log').innerText += event.data().logEntry.message + "\r\n";
+        });
+
+        SystemLog.get().emitter().on('error', function(event) {
+            document.getElementById('log').innerText += event.data().logEntry.message + "\r\n";
+        });
+
+        document.getElementById('blinky').onclick = function(event) {
+            const log = SystemLog.get();
+            log.info('');
+            log.info('Runtime import modules:');
+            PlurObject.getPlurified().map(i => { log.info(i.namepath); });
+        };
+
+        new TestApp(new BrowserTerminal()).start();
+    </script>
+    <style>
+    body {
+        background-color: cornflowerblue;
+    }
+    h1 {
+        font-size: 256pt;
+        color: ghostwhite;
+        text-shadow: 6px 6px lightblue;
+    }
+    @keyframes blinky {
+        0%   { color: lightblue; }
+        25%  { color: lightblue; }
+        50%  { color: transparent; }
+        75%  { color: lightblue; }
+        100% { color: lightblue; }
+    }
+    h1 span {
+        text-shadow: none;
+        animation: blinky 3.0s infinite;
+    }
+    h1 span:hover {
+        cursor: pointer;
+    }
+    #log {
+        position: fixed;
+        height: 100%;
+        width: 37%;
+        background-color: lightblue;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        font-family: monospace;
+        font-size: 8pt;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    </style>
+    <link rel="icon" type="image/png" href="../../../../../../doc/media/image/favico.png">
+</head>
+<body>
+<h1>p l u r <span id="blinky">.</span></h1>
+<div id="log"></div>
+</body>
+</html>
