@@ -14,6 +14,22 @@
  * iConcept and all derivatives are explicitly design-by-contract in nature. All derivatives of iConcept must provide
  * a programming contract specification in their source-code documentation, which must be conformed to by every type that
  * implements them. This is known as "conformance".
+ * 
+ * The base language concept framework provides definitions for: 
+ * * concept/iType - The concepts of type and structure.
+ * * concept/iVariable - The concepts of a type variable, inspection, and mutation.
+ * * concept/iValue - The concepts of value, both primitive and complex.
+ * * concept/iClass - The object-oriented concepts of a type class, inheritance, and polymorphism.
+ * * concept/iInterface - The object-oriented concepts of a class interface or class trait, implementation, and class contract.
+ *
+ * Composite framework concepts define:
+ * * concept/iModel - The concept of a data model and its accessors and mutators.
+ * * concept/iConfig - The concept of a class and object configuration model, built on the data model.
+ * * concept/iCreatable - The concept that a class may be instantiated with only a class-specific iConfig and iModel.
+ * 
+ * Conformance framework concepts define:
+ * * concept/Conformant - The concept of conformance to programming contract specifications.
+ * * concept/Portable - The concept of stricter standards within contracts that allow for language independence. 
  */
 
 import 'plur/Meta.mjs' as PlurMeta;
