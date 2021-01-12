@@ -1,18 +1,29 @@
 /**
- * The plur framework defines an portal standard meta-language definition for abstract software language concepts:
- * model, structure, protocol, and logic. The combined definitions for each of these sub-categories is known as the
- * Plur Conceptual Language or PlurCL.
+ * The Plur framework defines a portable metalanguage standard for abstract software language concepts within the domain
+ * of data model, structure, and protocol. The core definition library is known collectively as the Plur Metalanguage (PlurML).
  * 
- * PlurCL abstractly defines concepts commonly found in various programming languages. within the context
- * of a specific language that PlurCL standards are to be implemented, PlurCL concretely defines what language-specific
- * syntax and design patterns are to be used to implement a given abstract concept.
+ * PlurML abstractly defines concepts commonly found in various object-oriented programming languages in a general
+ * manner. It provides language-specific definitions as well, which dictate how syntax is used directly.
  *
- * Most importantly, PlurCL provides a common way to refer to primitive types, values, interfaces, and classes along
- * with common patterns on how they interact.
+ * PlurML provides a common way to refer to primitive types, values, interfaces, and classes along with common patterns for
+ * how they may be used.
+ *
+ * The kernel of the PlurML library is the definition of an abstract software concept, aptly named iConcept. It exists
+ * as a trait or interface in each programming language supported and all other PlurML concepts are derived from it.
+ *
+ * iConcept and all derivatives are explicitly design-by-contract in nature. All derivatives of iConcept are must provide
+ * a programming contract specification in their source-code documentation, which must be conformed to by every type that
+ * implements them. This is known as "conformance".
  */
 
 import 'plur/Meta.mjs' as PlurMeta;
 
+/**
+ *** @contract
+ * All derived types must provide a contract specification in its source documentation, indicated by a @contract doc header.
+ * All derived types must conform to contract specifications that they inherit.
+ * All implemented types must conform to the contract specifications that they're implementing.
+*/
 export default class iConcept {
     static namepath = 'plur/iConcept';
 };
