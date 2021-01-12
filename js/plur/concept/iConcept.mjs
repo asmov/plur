@@ -11,7 +11,7 @@
  * The kernel of the PlurML library is the definition of an abstract software concept, aptly named iConcept. It exists
  * as a trait or interface in each programming language supported and all other PlurML concepts are derived from it.
  *
- * iConcept and all derivatives are explicitly design-by-contract in nature. All derivatives of iConcept are must provide
+ * iConcept and all derivatives are explicitly design-by-contract in nature. All derivatives of iConcept must provide
  * a programming contract specification in their source-code documentation, which must be conformed to by every type that
  * implements them. This is known as "conformance".
  */
